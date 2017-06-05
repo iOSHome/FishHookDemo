@@ -1,0 +1,2 @@
+# FishHookDemo
+利用运行时函数库提供的能力我们可以实现Objective-C函数的动态替换，这对修改系统函数行为来解决疑难bug具有很重要的意义。然而在开发iOS App时，我们还可能会用到大量的c函数，在解决一些复杂问题时一样需要能hook c函数，fishhook就是facebook专门为此而开发的。fishhook是安全的，没有用到私有API,在yahoo的多个项目中都有用到。
