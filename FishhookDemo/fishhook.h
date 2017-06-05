@@ -21,6 +21,19 @@
 // OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+/**
+ fishhook can only hook functions that exist in other libraries. It cannot
+ hook functions that exist in the same image (library or executable) as your
+ currently running code.
+ 
+ The reason for this is that there's no indirection that happens when you
+ call a function in your own executable. It's just a plain jump to another
+ code address in your executable.
+ 
+ That's very different from calling a function in an external library, where
+ your executable uses dyld to figure out the address of the function being
+ called before jumping to it.
+ */
 #ifndef fishhook_h
 #define fishhook_h
 
